@@ -12,12 +12,12 @@ import random
 # print(len({'key1': '1', 'key2': '2'}))
 
 ##User input
-# userInput = input("Enter your name")
-# print(userInput)
+#userInput = input("Enter your name")
+#print(userInput)
 
 ##Random number
-# number = random.randint(1, 20)
-# print(number)
+#number = random.randint(1, 20)
+#print(number)
 
 ##Regex example
 # import re

@@ -25,4 +25,4 @@ def addition(num1, num2):
 sum = times(10, 10)
 print(sum)
 
-
+addition(100, 50)
