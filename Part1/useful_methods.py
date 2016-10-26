@@ -43,3 +43,20 @@ import random
 #     print("Converted the string to an int!")
 # except ValueError:
 #     print("String is not an int! :(")
+
+##Check if file exist on disk
+#import os
+#if os.path.exists('game_data.json'):
+#    print("File exists!")
+
+##Save file with json data to disk
+#import json
+#jsonData = {'name': 'John', 'surname': 'Doe'}
+#with open('game_data.json', 'w') as outfile:
+#    json.dump(jsonData, outfile, sort_keys=True, indent=4, ensure_ascii=False)
+
+##Open file from disk
+#import json
+#with open('game_data.json') as data_file:
+#    data = json.load(data_file)
+#print(data)
