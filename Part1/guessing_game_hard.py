@@ -38,6 +38,8 @@ import json
 runProcess = True
 
 
+# We try to open the file game_data.json. If the files does not exist, not old game data
+# is available and we return the default values which is {'total': 0, 'correct': 0, 'failed': 0}.
 def load_player_statistics():
 
     if os.path.exists('game_data.json'):
@@ -56,6 +58,7 @@ def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
+# Write player statistics to game_data.json.
 def save_player_statistics(json_data):
     with open('game_data.json', 'w') as outfile:
         json.dump(json_data, outfile, sort_keys=True, indent=4, ensure_ascii=False)
@@ -114,19 +117,17 @@ while runProcess:
             # Check if the user guessed the correct number
             if randomNumber == userInput:
 
-                # Increase the total number os correct answers by one.
+                # Increase the total number of correct answers by one.
                 gameData['correct'] += 1
-
                 message = "Correct! You guessed {guessedNumber} and the number is {randomNumber}\n"
 
             else:
 
-                # Increase the total number os failed answers by one.
+                # Increase the total number of failed answers by one.
                 gameData['failed'] += 1
-
                 message = "Fail! You guessed {guessedNumber} but the number is {randomNumber}\n"
 
-            # Clear the terminal and show new info/stats each after each guess.
+            # Clear the terminal, show new info/stats and save stats after each guess.
             clear_terminal()
             show_info(gameData)
             save_player_statistics(gameData)

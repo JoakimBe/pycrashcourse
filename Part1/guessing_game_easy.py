@@ -15,8 +15,6 @@
 
 import random
 
-runProcess = True
-
 print("\nGuess a number between 1 and 10.\nWrite 'Quit' to exit the game.\n\n")
 
 # Randomize a number between 1 and 10 and return that number to the randomNumber variable.
