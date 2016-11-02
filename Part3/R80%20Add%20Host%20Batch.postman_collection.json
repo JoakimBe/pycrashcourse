@@ -1,0 +1,61 @@
+{
+	"variables": [],
+	"info": {
+		"name": "R80 Add Host Batch",
+		"_postman_id": "394f54a1-4f8e-886c-97cc-212eb8b0772b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Hosts From CSV",
+			"request": {
+				"url": "https://10.128.1.200/web_api/add-host",
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "X-chkp-sid",
+						"value": "{{sid}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"{{name}}\",\n\t\"ip-address\": \"{{ip}}\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Publish",
+			"request": {
+				"url": "https://10.128.1.200/web_api/publish",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "X-chkp-sid",
+						"value": "{{sid}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,213 @@
+{
+	"id": "6fe388c0-f837-4cba-17a0-9f646efdf4d0",
+	"name": "R80 ReST API",
+	"description": "",
+	"order": [
+		"1d0e6436-803b-7594-8ebb-492ac7b1eebd",
+		"4c775056-4249-8303-73ea-8b8de8ff57a0",
+		"99abf466-fbc4-8ef8-53f0-451a75144e88",
+		"d6e13cac-0007-0a93-cc24-cd24e7f86a6b",
+		"0e5ded3f-dc14-e362-5e3a-f8bd0c7d865c"
+	],
+	"folders": [],
+	"timestamp": 1478008482461,
+	"owner": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "0e5ded3f-dc14-e362-5e3a-f8bd0c7d865c",
+			"headers": "Content-Type: application/json\nX-chkp-sid: {{sid}}\n",
+			"url": "https://10.128.1.200/web_api/add-access-rule",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478031206566,
+			"name": "Add Access Rule",
+			"description": "",
+			"collectionId": "6fe388c0-f837-4cba-17a0-9f646efdf4d0",
+			"responses": [],
+			"rawModeData": "{\n\t\"layer\": \"Network\",\n\t\"position\": {\"below\": \"Rule2\"},\n\t\"name\": \"RuleX\",\n\t\"action\": \"Accept\"\n}"
+		},
+		{
+			"id": "1d0e6436-803b-7594-8ebb-492ac7b1eebd",
+			"headers": "content-Type: application/json\n",
+			"url": "https://10.128.1.200/web_api/login",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "var jsonData = JSON.parse(responseBody);\r\npostman.setGlobalVariable('sid', jsonData.sid);\r\npostman.setGlobalVariable('uid', jsonData.uid);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478025474776,
+			"name": "Login",
+			"description": "",
+			"collectionId": "6fe388c0-f837-4cba-17a0-9f646efdf4d0",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 467,
+					"headers": [
+						{
+							"name": "Access-Control-Allow-Credentials",
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Access-Control-Expose-Headers",
+							"key": "Access-Control-Expose-Headers",
+							"value": "",
+							"description": "Lets a server whitelist headers that browsers are allowed to access."
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 01 Nov 2016 13:06:07 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "X-Forwarded-Host-Port",
+							"key": "X-Forwarded-Host-Port",
+							"value": "443",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-UA-Compatible",
+							"key": "X-UA-Compatible",
+							"value": "IE=EmulateIE8",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\n  \"uid\" : \"86d454fb-29af-4329-b473-7f17bb3118f1\",\n  \"sid\" : \"jbnmsh6KB30kK-IbFY7DlxT1ELfJDE2TzUJNwcjMRXo\",\n  \"url\" : \"https://10.128.1.200:443/web_api\",\n  \"session-timeout\" : 600,\n  \"disk-space-message\" : \"Partition /var/log has: 1588 MB of free space and it's lower than required: 2000 MB\\n\",\n  \"api-server-version\" : \"1\"\n}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "8cf4e15f-b1e0-dcce-4b49-45059fb94ddf",
+					"name": "login",
+					"request": {
+						"url": "https://10.128.1.200:443/web_api/login",
+						"headers": [
+							{
+								"key": "content-Type",
+								"value": "application/json",
+								"type": "text",
+								"enabled": true,
+								"warning": ""
+							}
+						],
+						"data": "{\n\t\"user\": \"admin\",\n\t\"password\": \"temp123\"\n}",
+						"method": "POST",
+						"dataMode": "params"
+					}
+				}
+			],
+			"rawModeData": "{\n\t\"user\": \"admin\",\n\t\"password\": \"temp123\"\n}"
+		},
+		{
+			"id": "4c775056-4249-8303-73ea-8b8de8ff57a0",
+			"headers": "Content-Type: application/json\nX-chkp-sid: {{sid}}\n",
+			"url": "https://10.128.1.200/web_api/publish",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478025660132,
+			"name": "Publish",
+			"description": "",
+			"collectionId": "6fe388c0-f837-4cba-17a0-9f646efdf4d0",
+			"responses": [],
+			"rawModeData": "{}"
+		},
+		{
+			"id": "99abf466-fbc4-8ef8-53f0-451a75144e88",
+			"headers": "content-Type: application/json\nX-chkp-sid: {{sid}}\n",
+			"url": "https://10.128.1.200/web_api/add-host",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478025135871,
+			"name": "Add Host",
+			"description": "",
+			"collectionId": "6fe388c0-f837-4cba-17a0-9f646efdf4d0",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"Host_1\",\n\t\"ip-address\": \"10.10.10.1\"\n}"
+		},
+		{
+			"id": "d6e13cac-0007-0a93-cc24-cd24e7f86a6b",
+			"headers": "Content-Type: application/json\nX-chkp-sid: {{sid}}\n",
+			"url": "https://10.128.1.200/web_api/show-access-layers",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "6fe388c0-f837-4cba-17a0-9f646efdf4d0",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Show Access Layers",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1478028828817,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{}"
+		}
+	]
+}

@@ -19,3 +19,4 @@ priceInclVat3 = product3.calc_price_by_length(10)
 
 print(priceInclVat3['priceInclVat'])
 
+
